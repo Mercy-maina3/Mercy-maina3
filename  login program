@@ -1,0 +1,38 @@
+package car.rental.system;
+
+ // Import Scanner class for user input
+import java.util.Scanner;
+
+public class Login {
+    public static void main(String[] args) {
+        Scanner car = new Scanner(System.in);
+        String username, password;
+        int attempts = 0;
+        // Prompt user to enter username
+        System.out.println("Enter username: ");
+        username = car.nextLine();
+ // Prompt user to enter password
+        System.out.println("Enter password: ");
+        password = car.nextLine();
+        // Loop to allow user to retry login up to 3 times
+        while (attempts <3) {
+               // Check the details provided 
+            if (username.equals("user") && password.equals("password")) {
+                 // Successful login 
+                System.out.println(" login successfully");
+                 // Exit on successful login
+                break;
+            } else {
+                System.out.println(" one more trial left");
+                attempts++;
+            }
+        }
+ // If user exceeds maximum attempts, display error message
+        if (attempts == 3) {
+            System.out.println("incorrect username and password.");
+        }
+ // Close Scanner object
+        scanner.close();
+    }
+}
+
